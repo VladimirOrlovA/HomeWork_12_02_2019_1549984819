@@ -154,15 +154,49 @@ void figure5(int type, char ch, int n)
 {
 	for (int i = 0; i < n; i++)
 	{
+		for (int j = 0; j < n * 2 - 1; j++)
+		{
+			if (i == n - 1 || j <= i + (n / 2 + 1) + 2 && j >= (n / 2 + 1) + 2 - i) cout << ch;
+			else cout << " ";
+		}
+		cout << endl;
+	}
+}
+
+void figure6(int type, char ch, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n * 2 - 1; j++)
+		{
+			if (i == 0 || j >= i && j <= n * 2 - 2 - i) cout << ch;
+			else cout << " ";
+		}
+		cout << endl;
+	}
+}
+
+void figure7(int type, char ch, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
 		for (int j = 0; j < n*2-1; j++)
 		{
-			if ( i==n-1 || j==i+(n/2+1)+2 || j == (n/2+1)+2 - i) cout << ch;  ///  || i >= n - 1 - j || ///  вертикаль j == n - 1   горизонтальi == n - 1     
-			
-			//if (i==n) cout << ch;
-			//if (j == n - 1 - i) cout << ch;
+			if (i == n - 1 || j == i + (n / 2 + 1) + 2 || j == (n / 2 + 1) + 2 - i) cout << ch;
 			else cout << " ";
-			
-			
+		}
+		cout << endl;
+	}
+}
+
+void figure8(int type, char ch, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n * 2-1; j++)
+		{
+			if (i == 0 || j == i || j == n * 2 - 2 - i) cout << ch;
+			else cout << " ";
 		}
 		cout << endl;
 	}
@@ -221,7 +255,7 @@ void Task2()
 	cout << "¬ведите высоту фигуры -> ";
 	cin >> n;*/
 
-	figure1(type, ch, n);
+	/*figure1(type, ch, n);
 	cout << endl;
 	figure11(type, ch, n);
 	cout << endl;
@@ -236,8 +270,16 @@ void Task2()
 	figure4(type, ch, n);
 	cout << endl;
 	figure14(type, ch, n);
-	cout << endl;
+	cout << endl;*/
 	figure5(type, ch, n);
+	cout << endl;
+	figure6(type, ch, n);
+	cout << endl;
+	figure7(type, ch, n);
+	cout << endl;
+	figure8(type, ch, n);
+	cout << endl;
+	
 }
 
 
