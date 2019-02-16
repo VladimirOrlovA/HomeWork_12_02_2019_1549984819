@@ -332,33 +332,36 @@ void Task2()
 	cout << "\n--------------------------------------------------------------------------\n\nTask2\n\n";
 	SetConsoleTextAttribute(hConsole, 7);
 
-	int type=0, n=7;
-	char ch='*';
+		int type=1, n = 7;
+		char ch = '*', choiсe = 'y';
+	do
+	{
+		cout << "Введите тип фигуры пустая (0) полная (1) -> ";
+		cin >> type;
 
-	/*cout << "Введите тип фигуры полная (1) пустая (2) -> ";
-	cin >> type;
+		cout << "Ввведите символ которым печатается фигура - > ";
+		cin >> ch;
 
-	cout << "Ввведите символ которым печатается фигура - > ";
-	cin >> ch;
 
-	cout << "Введите высоту фигуры -> ";
-	cin >> n;*/
+		figure1(type, ch, n);
+		cout << endl;
+		figure2(type, ch, n);
+		cout << endl;
+		figure3(type, ch, n);
+		cout << endl;
+		figure4(type, ch, n);
+		cout << endl;
+		figure5_7(type, ch, n);
+		cout << endl;
+		figure6_8(type, ch, n);
+		cout << endl;
+		figure9_10(type, ch, n);
+		cout << endl;
 
-	figure1(type, ch, n);
-	cout << endl;
-	figure2(type, ch, n);
-	cout << endl;
-	figure3(type, ch, n);
-	cout << endl;
-	figure4(type, ch, n);
-	cout << endl;
-	figure5_7(type, ch, n);
-	cout << endl;
-	figure6_8(type, ch, n);
-	cout << endl;
-	figure9_10(type, ch, n);
-	cout << endl;
+		cout << "Вы хотите продолжить (y/n) ? -> ";
+		cin >> choiсe;
 
+	} while (choiсe =='y');
 	
 }
 
