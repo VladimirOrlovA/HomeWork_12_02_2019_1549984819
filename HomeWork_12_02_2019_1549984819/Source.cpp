@@ -48,157 +48,246 @@ void changeArray2(int arr[][30], int n, int m, int column)
 }
 
 
+
 void figure1(int type, char ch, int n)
 {
-	for (int i = 0; i < n; i++)
+	if (type)
 	{
-		for (int j = n - 1 - i; j < n; j++)
-		{
-			cout<< ch;
-		}
-		cout << endl;
-	}
-}
+		cout << "\n Фигура № 1 - заполненная \n\n";
 
-void figure11(int type, char ch, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
+		for (int i = 0; i < n; i++)
 		{
-			if ( i==n-1 || j==0 || i == j) cout << ch; // рисуем границы: i==n-1 для горизонтали j==0 для вертикали, i==j для диагонали	
-			else cout << " ";
+			for (int j = n - 1 - i; j < n; j++)
+			{
+				cout << ch;
+			}
+			cout << endl;
 		}
-		cout << endl;
+	}
+	else
+	{
+		cout << "\n Фигура № 11 - пустая \n\n";
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				if (i == n - 1 || j == 0 || i == j) cout << ch; // рисуем границы: i==n-1 для горизонтали j==0 для вертикали, i==j для диагонали	
+				else cout << " ";
+			}
+			cout << endl;
+		}
 	}
 }
 
 void figure2(int type, char ch, int n)
 {
-	for (int i = 0; i < n; i++)
+	if (type)
 	{
-		for (int j = n - i; j > 0; j--)
-		{
-			cout << ch;
-		}
-		cout << endl;
-	}
-}
+		cout << "\n Фигура № 2 - заполненная \n\n";
 
-void figure12(int type, char ch, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = n-i; j > 0; j--)
+		for (int i = 0; i < n; i++)
 		{
-			if (i == 0 || j == 1 || i == n - j) cout << ch;
-			else cout << " ";
+			for (int j = n - i; j > 0; j--)
+			{
+				cout << ch;
+			}
+			cout << endl;
 		}
-		cout << endl;
+	}
+	else
+	{
+		cout << "\n Фигура № 12 - пустая \n\n";
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = n - i; j > 0; j--)
+			{
+				if (i == 0 || j == 1 || i == n - j) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
+		}
 	}
 }
 
 void figure3(int type, char ch, int n)
 {
-	for (int i = 0; i < n; i++)
+	if (type)
 	{
-		for (int j = 0; j < n; j++)
-		{
-			if (j == n - 1 || i >= n - 1 - j || i == n - 1) cout << ch;
-			else cout << " ";
-		}
-		cout << endl;
-	}
-}
+		cout << "\n Фигура № 3 - заполненная \n\n";
 
-void figure13(int type, char ch, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
+		for (int i = 0; i < n; i++)
 		{
-			if (j == n - 1 || i == n - 1 - j || i == n - 1) cout << ch;
-			else cout << " ";
+			for (int j = 0; j < n; j++)
+			{
+				if (j == n - 1 || i >= n - 1 - j || i == n - 1) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
 		}
-		cout << endl;
+	}
+	else
+	{
+		cout << "\n Фигура № 13 - пустая \n\n";
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				if (j == n - 1 || i == n - 1 - j || i == n - 1) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
+		}
 	}
 }
 
 void figure4(int type, char ch, int n)
 {
-	for (int i = 0; i < n; i++)
+	if (type)
 	{
-		for (int j = 0; j < n; j++)
+		cout << "\n Фигура № 4 - заполненная \n\n";
+
+		for (int i = 0; i < n; i++)
 		{
-			if (i == 0 || j == n - 1 || j >= i) cout << ch;
-			else cout << " ";
+			for (int j = 0; j < n; j++)
+			{
+				if (i == 0 || j == n - 1 || j >= i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
 		}
-		cout << endl;
+	}
+	else
+	{
+		cout << "\n Фигура № 14 - пустая \n\n";
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				if (i == 0 || j == n - 1 || i == j) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
+		}
 	}
 }
 
-void figure14(int type, char ch, int n)
+void figure5_7(int type, char ch, int n)
 {
-	for (int i = 0; i < n; i++)
+	if (type)
 	{
-		for (int j = 0; j < n; j++)
+		cout << "\n Фигура № 5 - пирамида заполненная \n\n";
+
+		for (int i = 0; i < n; i++)
 		{
-			if(i==0 || j==n-1 || i==j) cout << ch;
-			else cout << " ";
+			for (int j = 0; j < n * 2 - 1; j++)
+			{
+				if (j <= i + (n / 2 + 1) + 2 && j >= (n / 2 + 1) + 2 - i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
 		}
-		cout << endl;
+	}
+	else
+	{
+		cout << "\n Фигура № 7 - пирамида пустая \n\n";
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n * 2 - 1; j++)
+			{
+				if (i == n - 1 || j == i + (n / 2 + 1) + 2 || j == (n / 2 + 1) + 2 - i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
+		}
 	}
 }
 
-void figure5(int type, char ch, int n)
+void figure6_8(int type, char ch, int n)
 {
-	for (int i = 0; i < n; i++)
+	if (type)
 	{
-		for (int j = 0; j < n * 2 - 1; j++)
+		cout << "\n Фигура № 6 - перевернутая пирамида заполненная \n\n";
+
+		for (int i = 0; i < n; i++)
 		{
-			if (i == n - 1 || j <= i + (n / 2 + 1) + 2 && j >= (n / 2 + 1) + 2 - i) cout << ch;
-			else cout << " ";
+			for (int j = 0; j < n * 2 - 1; j++)
+			{
+				if (j >= i && j <= n * 2 - 2 - i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
 		}
-		cout << endl;
+	}
+	else
+	{
+		cout << "\n Фигура № 8 - перевернутая пирамида пустая \n\n";
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n * 2 - 1; j++)
+			{
+				if (i == 0 || j == i || j == n * 2 - 2 - i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
+		}
 	}
 }
 
-void figure6(int type, char ch, int n)
+void figure9_10(int type, char ch, int n)
 {
-	for (int i = 0; i < n; i++)
+	if (type)
 	{
-		for (int j = 0; j < n * 2 - 1; j++)
-		{
-			if (i == 0 || j >= i && j <= n * 2 - 2 - i) cout << ch;
-			else cout << " ";
-		}
-		cout << endl;
-	}
-}
+		cout << "\n Фигура № 9 - ромб заполненный \n\n";
 
-void figure7(int type, char ch, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n*2-1; j++)
+		for (int i = 0; i < n; i++)
 		{
-			if (i == n - 1 || j == i + (n / 2 + 1) + 2 || j == (n / 2 + 1) + 2 - i) cout << ch;
-			else cout << " ";
+			for (int j = 0; j < n * 2 - 1; j++)
+			{
+				if (j <= i + (n / 2 + 1) + 2 && j >= (n / 2 + 1) + 2 - i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
 		}
-		cout << endl;
-	}
-}
 
-void figure8(int type, char ch, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n * 2-1; j++)
+		for (int i = 1; i < n; i++)
 		{
-			if (i == 0 || j == i || j == n * 2 - 2 - i) cout << ch;
-			else cout << " ";
+			for (int j = 0; j < n * 2 - 1; j++)
+			{
+				if (j >= i && j <= n * 2 - 2 - i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
 		}
-		cout << endl;
+	}
+	else
+	{
+		cout << "\n Фигура № 9 - ромб пустой \n\n";
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n * 2 - 1; j++)
+			{
+				if (j == i + (n / 2 + 1) + 2 || j == (n / 2 + 1) + 2 - i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
+		}
+
+		for (int i = 1; i < n; i++)
+		{
+			for (int j = 0; j < n * 2 - 1; j++)
+			{
+				if (j == i || j == n * 2 - 2 - i) cout << ch;
+				else cout << " ";
+			}
+			cout << endl;
+		}
 	}
 }
 
@@ -243,7 +332,7 @@ void Task2()
 	cout << "\n--------------------------------------------------------------------------\n\nTask2\n\n";
 	SetConsoleTextAttribute(hConsole, 7);
 
-	int type=1, n=7;
+	int type=0, n=7;
 	char ch='*';
 
 	/*cout << "Введите тип фигуры полная (1) пустая (2) -> ";
@@ -255,30 +344,21 @@ void Task2()
 	cout << "Введите высоту фигуры -> ";
 	cin >> n;*/
 
-	/*figure1(type, ch, n);
-	cout << endl;
-	figure11(type, ch, n);
+	figure1(type, ch, n);
 	cout << endl;
 	figure2(type, ch, n);
 	cout << endl;
-	figure12(type, ch, n);
-	cout << endl;
 	figure3(type, ch, n);
-	cout << endl;
-	figure13(type, ch, n);
 	cout << endl;
 	figure4(type, ch, n);
 	cout << endl;
-	figure14(type, ch, n);
-	cout << endl;*/
-	figure5(type, ch, n);
+	figure5_7(type, ch, n);
 	cout << endl;
-	figure6(type, ch, n);
+	figure6_8(type, ch, n);
 	cout << endl;
-	figure7(type, ch, n);
+	figure9_10(type, ch, n);
 	cout << endl;
-	figure8(type, ch, n);
-	cout << endl;
+
 	
 }
 
