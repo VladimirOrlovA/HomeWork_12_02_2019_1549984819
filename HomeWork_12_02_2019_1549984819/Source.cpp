@@ -150,18 +150,22 @@ void figure14(int type, char ch, int n)
 	}
 }
 
-void figure5(char ch, int n)
+void figure5(int type, char ch, int n)
 {
-	if (n == 0) return;
-	static int w = 1;
-	for (int i = 1; i < n; i++)
-		cout << " ";
-	for (int i = 0; i < w; i++)
-		cout << ch;
-	cout << endl;
-
-	w += 2;
-	figure5(n - 1);
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n*2-1; j++)
+		{
+			if ( i==n-1 || j==i+(n/2+1)+2 || j == (n/2+1)+2 - i) cout << ch;  ///  || i >= n - 1 - j || ///  вертикаль j == n - 1   горизонтальi == n - 1     
+			
+			//if (i==n) cout << ch;
+			//if (j == n - 1 - i) cout << ch;
+			else cout << " ";
+			
+			
+		}
+		cout << endl;
+	}
 }
 
 
@@ -205,7 +209,7 @@ void Task2()
 	cout << "\n--------------------------------------------------------------------------\n\nTask2\n\n";
 	SetConsoleTextAttribute(hConsole, 7);
 
-	int type=1, n=8;
+	int type=1, n=7;
 	char ch='*';
 
 	/*cout << "¬ведите тип фигуры полна€ (1) пуста€ (2) -> ";
@@ -217,23 +221,23 @@ void Task2()
 	cout << "¬ведите высоту фигуры -> ";
 	cin >> n;*/
 
-	//figure1(type, ch, n);
+	figure1(type, ch, n);
 	cout << endl;
-	//figure11(type, ch, n);
+	figure11(type, ch, n);
 	cout << endl;
-	//figure2(type, ch, n);
+	figure2(type, ch, n);
 	cout << endl;
-	//figure12(type, ch, n);
+	figure12(type, ch, n);
 	cout << endl;
-	//figure3(type, ch, n);
+	figure3(type, ch, n);
 	cout << endl;
-	//figure13(type, ch, n);
+	figure13(type, ch, n);
 	cout << endl;
-	//figure4(type, ch, n);
+	figure4(type, ch, n);
 	cout << endl;
-	//figure14(type, ch, n);
+	figure14(type, ch, n);
 	cout << endl;
-	figure5(ch, n);
+	figure5(type, ch, n);
 }
 
 
